@@ -1,0 +1,91 @@
+:root {
+  --bg: #f4f5f7;
+  --card: #ffffff;
+  --text: #222222;
+  --muted: #555555;
+  --border: #dddddd;
+  --primary: #2954c8;
+  --footer: #e8e8e8;
+  --fav: #d6336c;
+  --error: #d32f2f;
+}
+
+
+body.dark {
+  --bg: #14171f;
+  --card: #1e2330;
+  --text: #e6e8ee;
+  --muted: #a0a8ba;
+  --border: #33394d;
+  --primary: #3b5fc9;
+  --footer: #1b1f2b;
+  --fav: #ff6f9f;
+  --error: #ff7b7b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--primary);
+  color: white;
+}
+.header h1 { margin: 0; font-size: 24px; }
+.header p { margin: 0; }
+.header-right { display: flex; align-items: center; gap: 16px; }
+
+.container { flex: 1; width: 100%; max-width: 1000px; margin: 0 auto; padding: 16px; }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 12px; }
+.toolbar input { flex: 1; min-width: 200px; }
+
+input, select {
+  padding: 8px;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+button { cursor: pointer; }
+
+
+.book-grid { display: flex; flex-wrap: wrap; gap: 16px; }
+.book-card {
+  flex: 0 0 calc((100% - 32px) / 3);
+  padding: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.book-card h3 { margin: 0 0 8px; }
+.book-card p { margin: 4px 0; color: var(--muted); }
+.book-card button { margin: 8px 8px 0 0; padding: 6px 12px; }
+.book-card button.active { background: var(--fav); color: white; border: 1px solid var(--fav); }
+
+
+.add-book { margin-top: 32px; padding: 16px; background: var(--card); border-radius: 8px; }
+.field { margin-bottom: 12px; display: flex; flex-direction: column; }
+.field label { margin-bottom: 4px; font-weight: bold; }
+.error { color: var(--error); min-height: 18px; }
+form button { padding: 8px 16px; font-size: 16px; }
+
+.footer { padding: 16px; text-align: center; background: var(--footer); }
+.footer p { margin: 0; }
+
